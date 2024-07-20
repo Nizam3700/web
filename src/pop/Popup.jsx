@@ -9,7 +9,11 @@ const Popup = ({ show, onClose }) => {
   return (
     <div className="popup-overlay" onClick={onClose}>
       <div className="popup-content" onClick={(e) => e.stopPropagation()}>
-        <button className="close-button hover:bg-black text-yellow-300" onClick={onClose}> × </button>
+      <button className="close-button hover:bg-black text-yellow-300" onClick={(e) => {
+      e.stopPropagation();
+      console.log("Close button clicked");
+      onClose();
+}}> × </button>
         <div>
 
         <img src="https://www.panaceaclinic.in/assets/uploads/news/facility_165.jpg" alt="Popup" className="popup-image" />
